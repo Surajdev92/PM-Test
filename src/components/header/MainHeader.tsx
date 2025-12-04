@@ -1,40 +1,41 @@
-import React, { useState } from 'react'
-import Container from '../common/Container'
-import Logo from '../common/Logo'
-import Button from '../common/Button'
+import React, { useState } from "react";
+import Container from "../common/Container";
+import Logo from "../common/Logo";
+import Button from "../common/Button";
+import userIcon from "../../assets/icons/User.svg";
+import arrowRightIcon from "../../assets/icons/Arrow Right.svg";
 
 interface NavItem {
-  label: string
-  href: string
-  hasDropdown?: boolean
+  label: string;
+  href: string;
+  hasDropdown?: boolean;
 }
 
 const navItems: NavItem[] = [
-  { label: 'Trading', href: '#trading', hasDropdown: true },
-  { label: 'Discover', href: '#discover', hasDropdown: true },
-  { label: 'Promotions', href: '#promotions', hasDropdown: true },
-  { label: 'Company', href: '#company', hasDropdown: true },
-  { label: 'Partner with us', href: '#partner', hasDropdown: false },
-]
+  { label: "Trading", href: "#trading", hasDropdown: true },
+  { label: "Discover", href: "#discover", hasDropdown: true },
+  { label: "Promotions", href: "#promotions", hasDropdown: true },
+  { label: "Company", href: "#company", hasDropdown: true },
+  { label: "Partner with us", href: "#partner", hasDropdown: false },
+];
 
 const MainHeader: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeAccountType, setActiveAccountType] = useState<'personal' | 'institutional'>('personal')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
       <header className="bg-white border-b border-neutral-200 sticky top-0 z-50">
         <Container>
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <Logo />
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-neutral-700 hover:text-primary transition-colors font-medium flex items-center gap-1"
+                  className="text-neutral-700 hover:text-primary transition-colors font-medium flex items-center gap-1 text-sm"
                   aria-label={item.label}
                 >
                   {item.label}
@@ -54,12 +55,26 @@ const MainHeader: React.FC = () => {
                       />
                     </svg>
                   )}
+                  {item.label === "Partner with us" && (
+                    <img
+                      src={arrowRightIcon}
+                      alt=""
+                      className="w-3.5 h-3.5 ml-1"
+                      aria-hidden="true"
+                    />
+                  )}
                 </a>
               ))}
             </nav>
 
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-5 ml-auto">
               <Button label="Register" variant="primary" />
+              <img
+                src={userIcon}
+                alt=""
+                className="w-6 h-6"
+                aria-hidden="true"
+              />
             </div>
 
             {/* Mobile Menu Button */}
@@ -93,32 +108,6 @@ const MainHeader: React.FC = () => {
               </svg>
             </button>
           </div>
-
-          {/* Account Type Tabs */}
-          <div className="flex items-center gap-4 pb-2 border-b border-neutral-200">
-            <button
-              onClick={() => setActiveAccountType('personal')}
-              className={`text-sm font-medium pb-2 transition-colors ${
-                activeAccountType === 'personal'
-                  ? 'text-primary border-b-2 border-primary'
-                  : 'text-neutral-500 hover:text-neutral-700'
-              }`}
-              aria-label="Personal Account"
-            >
-              Personal
-            </button>
-            <button
-              onClick={() => setActiveAccountType('institutional')}
-              className={`text-sm font-medium pb-2 transition-colors ${
-                activeAccountType === 'institutional'
-                  ? 'text-primary border-b-2 border-primary'
-                  : 'text-neutral-500 hover:text-neutral-700'
-              }`}
-              aria-label="Institutional Account"
-            >
-              Institutional
-            </button>
-          </div>
         </Container>
 
         {/* Mobile Menu */}
@@ -137,7 +126,11 @@ const MainHeader: React.FC = () => {
                   </a>
                 ))}
                 <div className="pt-4">
-                  <Button label="Register" variant="primary" className="w-full" />
+                  <Button
+                    label="Register"
+                    variant="primary"
+                    className="w-full"
+                  />
                 </div>
               </nav>
             </Container>
@@ -145,8 +138,7 @@ const MainHeader: React.FC = () => {
         )}
       </header>
     </>
-  )
-}
+  );
+};
 
-export default MainHeader
-
+export default MainHeader;

@@ -42,6 +42,9 @@ export default {
           800: "#262626",
           900: "#171717",
         },
+        text: {
+          primary: "#151515",
+        },
       },
       fontFamily: {
         sans: [

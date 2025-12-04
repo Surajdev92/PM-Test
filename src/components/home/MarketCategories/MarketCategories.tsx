@@ -1,11 +1,11 @@
-import React from 'react'
-import Container from '../../common/Container'
-import Card from '../../common/Card'
+import React from "react";
+import Container from "../../common/Container";
+import Card from "../../common/Card";
 
 interface MarketCategory {
-  icon: React.ReactNode
-  title: string
-  description: string
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }
 
 const MarketCategories: React.FC = () => {
@@ -26,7 +26,7 @@ const MarketCategories: React.FC = () => {
           />
         </svg>
       ),
-      title: 'Forex',
+      title: "Forex",
       description:
         "Trade the world's largest financial market. Access deep liquidity, tight spreads, and constant opportunity across major and minor currency pairs.",
     },
@@ -46,7 +46,7 @@ const MarketCategories: React.FC = () => {
           />
         </svg>
       ),
-      title: 'Stocks',
+      title: "Stocks",
       description:
         "From Wall Street to global tech leaders, follow the world's leading companies and react to market moves in real time.",
     },
@@ -66,9 +66,9 @@ const MarketCategories: React.FC = () => {
           />
         </svg>
       ),
-      title: 'Indices',
+      title: "Indices",
       description:
-        'Trade major global indices with deep liquidity, precise execution, and competitive spreads across key markets.',
+        "Trade major global indices with deep liquidity, precise execution, and competitive spreads across key markets.",
     },
     {
       icon: (
@@ -86,11 +86,11 @@ const MarketCategories: React.FC = () => {
           />
         </svg>
       ),
-      title: 'Commodities',
+      title: "Commodities",
       description:
-        'Tap into global demand and supply trends by trading essential resources such as oil, gas, and agricultural products.',
+        "Tap into global demand and supply trends by trading essential resources such as oil, gas, and agricultural products.",
     },
-  ]
+  ];
 
   return (
     <section className="py-16 md:py-24 bg-neutral-50">
@@ -107,18 +107,16 @@ const MarketCategories: React.FC = () => {
 
         {/* Feature Pills */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {[
-            '$0 Deposit Fees',
-            'Spreads from 0.0 pips',
-            'Secure Funds',
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="px-4 py-2 bg-white rounded-full text-sm font-medium text-neutral-700 shadow-sm"
-            >
-              {feature}
-            </div>
-          ))}
+          {["$0 Deposit Fees", "Spreads from 0.0 pips", "Secure Funds"].map(
+            (feature, index) => (
+              <div
+                key={index}
+                className="px-4 py-2 bg-white rounded-full text-sm font-medium text-neutral-700 shadow-sm"
+              >
+                {feature}
+              </div>
+            )
+          )}
         </div>
 
         {/* Category Cards */}
@@ -157,8 +155,7 @@ const MarketCategories: React.FC = () => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default MarketCategories
-
+export default MarketCategories;
