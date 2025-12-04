@@ -1,9 +1,16 @@
 import React from "react";
 import Container from "../../common/Container";
 import Card from "../../common/Card";
+import coinIcon from "../../../assets/icons/Coin.png";
+import graphAscendIcon from "../../../assets/icons/Graph Ascend.png";
+import analyticsPieIcon from "../../../assets/icons/Analytics Pie.png";
+import earthGradientIcon from "../../../assets/icons/Earth Gradient.png";
+import validatedIcon from "../../../assets/icons/Validated.png";
+import marketCategoriesBg from "../../../assets/images/Market Categories.png";
+import sendIcon from "../../../assets/icons/Send.svg";
 
 interface MarketCategory {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
@@ -11,81 +18,25 @@ interface MarketCategory {
 const MarketCategories: React.FC = () => {
   const categories: MarketCategory[] = [
     {
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
+      icon: coinIcon,
       title: "Forex",
       description:
         "Trade the world's largest financial market. Access deep liquidity, tight spreads, and constant opportunity across major and minor currency pairs.",
     },
     {
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-          />
-        </svg>
-      ),
+      icon: graphAscendIcon,
       title: "Stocks",
       description:
         "From Wall Street to global tech leaders, follow the world's leading companies and react to market moves in real time.",
     },
     {
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
-          />
-        </svg>
-      ),
+      icon: analyticsPieIcon,
       title: "Indices",
       description:
         "Trade major global indices with deep liquidity, precise execution, and competitive spreads across key markets.",
     },
     {
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-          />
-        </svg>
-      ),
+      icon: earthGradientIcon,
       title: "Commodities",
       description:
         "Tap into global demand and supply trends by trading essential resources such as oil, gas, and agricultural products.",
@@ -93,65 +44,92 @@ const MarketCategories: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-50">
-      <Container>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Access 17,000+ markets all in one
-          </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Trade forex, shares, indices, and commodities with competitive
-            spreads, deep liquidity, and seamless execution.
-          </p>
-        </div>
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={marketCategoriesBg}
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0"></div>
+      </div>
 
-        {/* Feature Pills */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {["$0 Deposit Fees", "Spreads from 0.0 pips", "Secure Funds"].map(
-            (feature, index) => (
+      <Container>
+        <div className="relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Access 17,000+ markets all in one
+            </h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
+              Trade forex, shares, indices, and commodities with competitive
+              spreads, deep liquidity, and seamless execution.
+            </p>
+          </div>
+
+          {/* Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            {[
+              { text: "$0 Deposit Fees", icon: validatedIcon },
+              { text: "Spreads from 0.0 pips", icon: coinIcon },
+              { text: "Secure Funds", icon: validatedIcon },
+            ].map((feature, index) => (
               <div
                 key={index}
-                className="px-4 py-2 bg-white rounded-full text-sm font-medium text-neutral-700 shadow-sm"
+                className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20 flex items-center gap-2"
               >
-                {feature}
+                {feature.icon && (
+                  <img
+                    src={feature.icon}
+                    alt=""
+                    className="w-4 h-4"
+                    aria-hidden="true"
+                  />
+                )}
+                <span>{feature.text}</span>
               </div>
-            )
-          )}
-        </div>
+            ))}
+          </div>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
-            <Card
-              key={index}
-              className="cursor-pointer group hover:scale-105 transition-transform"
-            >
-              <div className="flex flex-col h-full">
-                <div className="text-primary mb-4">{category.icon}</div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                  {category.title}
-                </h3>
-                <p className="text-neutral-600 text-sm flex-grow mb-4">
-                  {category.description}
-                </p>
-                <div className="flex justify-end">
-                  <svg
-                    className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+          {/* Category Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {categories.map((category, index) => (
+              <Card
+                key={index}
+                className="cursor-pointer rounded-3xl group hover:-translate-y-5 transition-transform bg-white"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <img
+                      src={category.icon}
+                      alt={category.title}
+                      className="w-12 h-12 object-contain"
                     />
-                  </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-text-primary mb-3 pb-3 border-b border-neutral-200">
+                    {category.title}
+                  </h3>
+                  <p className="text-neutral-600 text-sm flex-grow mb-4 leading-relaxed">
+                    {category.description}
+                  </p>
+                  <div className="flex">
+                    <button
+                      className="w-10 h-10 rounded-full bg-neutral-200 group-hover:bg-primary transition-colors duration-200 flex items-center justify-center"
+                      aria-label={`Learn more about ${category.title}`}
+                    >
+                      <img
+                        src={sendIcon}
+                        alt=""
+                        className="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
