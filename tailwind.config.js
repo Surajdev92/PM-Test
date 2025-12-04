@@ -1,0 +1,92 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./**/*.{html,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#DC2626", // Red primary color from design
+          50: "#FEF2F2",
+          100: "#FEE2E2",
+          200: "#FECACA",
+          300: "#FCA5A5",
+          400: "#F87171",
+          500: "#DC2626",
+          600: "#B91C1C",
+          700: "#991B1B",
+          800: "#7F1D1D",
+          900: "#7F1D1D",
+        },
+        accent: {
+          DEFAULT: "#10B981", // Green for market data
+          50: "#ECFDF5",
+          100: "#D1FAE5",
+          200: "#A7F3D0",
+          300: "#6EE7B7",
+          400: "#34D399",
+          500: "#10B981",
+          600: "#059669",
+          700: "#047857",
+          800: "#065F46",
+          900: "#064E3B",
+        },
+        neutral: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+      },
+      fontFamily: {
+        sans: [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+      },
+      fontSize: {
+        "display-1": ["48px", { lineHeight: "56px", fontWeight: "700" }],
+        "display-2": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+        "display-3": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        h1: ["48px", { lineHeight: "56px", fontWeight: "700" }],
+        h2: ["36px", { lineHeight: "44px", fontWeight: "600" }],
+        h3: ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        body: ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
+      },
+      borderRadius: {
+        sm: "4px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+        "2xl": "24px",
+      },
+      boxShadow: {
+        sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
+    },
+  },
+  plugins: [],
+};
