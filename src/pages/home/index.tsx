@@ -5,6 +5,7 @@ import MarketDataStrip from "../../components/home/MarketDataStrip/MarketDataStr
 import MarketCategories from "../../components/home/MarketCategories/MarketCategories";
 import EmpowerTrading from "../../components/home/EmpowerTrading/EmpowerTrading";
 import Withdrawals from "../../components/home/Withdrawals/Withdrawals";
+import DailyUpdates from "../../components/home/DailyUpdates/DailyUpdates";
 import Testimonials from "../../components/home/Testimonials/Testimonials";
 import AccessSection from "../../components/home/AccessSection/AccessSection";
 import GetStarted from "../../components/home/GetStarted/GetStarted";
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
         <AccessSection />
         <EmpowerTrading />
         <Withdrawals />
+        <DailyUpdates />
         <Testimonials />
         <GetStarted />
       </main>
