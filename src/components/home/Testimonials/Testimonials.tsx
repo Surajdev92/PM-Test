@@ -89,13 +89,13 @@ const Testimonials: React.FC = () => {
   );
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-16 pb-8 md:py-24 md:pb-12 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={testimonialBg}
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fill"
           aria-hidden="true"
         />
       </div>

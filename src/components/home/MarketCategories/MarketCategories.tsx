@@ -59,8 +59,9 @@ const MarketCategories: React.FC = () => {
       <Container>
         <div className="relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Access 17,000+ markets all in one
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 max-w-6xl mx-auto">
+              Access <span className="text-primary">17,000+</span> markets all
+              in one
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Trade forex, shares, indices, and commodities with competitive
@@ -97,7 +98,7 @@ const MarketCategories: React.FC = () => {
             {categories.map((category, index) => (
               <Card
                 key={index}
-                className="cursor-pointer rounded-3xl group hover:-translate-y-5 transition-transform bg-white"
+                className="cursor-pointer !rounded-3xl group hover:-translate-y-5 transition-transform bg-white"
               >
                 <div className="flex flex-col h-full">
                   <div className="mb-4">

@@ -5,6 +5,7 @@ import MarketDataStrip from "../../components/home/MarketDataStrip/MarketDataStr
 import MarketCategories from "../../components/home/MarketCategories/MarketCategories";
 import Testimonials from "../../components/home/Testimonials/Testimonials";
 import AccessSection from "../../components/home/AccessSection/AccessSection";
+import GetStarted from "../../components/home/GetStarted/GetStarted";
 import Footer from "../../components/footer/Footer";
 
 const HomePage: React.FC = () => {
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         <MarketCategories />
         <AccessSection />
         <Testimonials />
+        <GetStarted />
       </main>
       <Footer />
     </div>

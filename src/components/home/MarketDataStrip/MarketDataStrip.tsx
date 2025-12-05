@@ -46,7 +46,7 @@ const MarketDataStrip: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-8 md:py-12">
+    <section className="bg-white py-8 md:py-12 -mt-48 z-[90] relative">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {marketData.map((item, index) => (

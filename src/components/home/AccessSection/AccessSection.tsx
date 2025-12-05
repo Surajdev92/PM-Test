@@ -92,11 +92,6 @@ const AccessSection: React.FC = () => {
                     style={{
                       background:
                         "linear-gradient(90deg, #390507 0%, #962020 100%)",
-                      boxShadow: `
-                        0px 2px 5px 0px rgba(255, 7, 7, 0.75) inset,
-                        0px 4px 24px 0px rgba(152, 14, 14, 0.25) inset,
-                        0px 3px 10px 0px rgba(255, 255, 255, 0.25) inset
-                      `,
                     }}
                     onClick={() => {}}
                   >
