@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import Hero from "../../components/home/Hero/Hero";
 import MarketDataStrip from "../../components/home/MarketDataStrip/MarketDataStrip";
 import MarketCategories from "../../components/home/MarketCategories/MarketCategories";
+import OurMarkets from "../../components/home/OurMarkets/OurMarkets";
 import EmpowerTrading from "../../components/home/EmpowerTrading/EmpowerTrading";
 import Withdrawals from "../../components/home/Withdrawals/Withdrawals";
 import DailyUpdates from "../../components/home/DailyUpdates/DailyUpdates";
@@ -20,6 +21,7 @@ const HomePage: React.FC = () => {
         <MarketDataStrip />
         <MarketCategories />
         <AccessSection />
+        <OurMarkets />
         <EmpowerTrading />
         <Withdrawals />
         <DailyUpdates />

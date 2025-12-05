@@ -10,7 +10,7 @@ const TopHeader: React.FC = () => {
   return (
     <div className="bg-white text-text-primary text-sm border-b border-neutral-200">
       <Container>
-        <div className="flex items-center justify-between py-2.5">
+        <div className="flex items-center justify-between py-2.5 flex-wrap">
           {/* Left Side - Personal/Institutional Tabs */}
           <div className="flex items-center gap-4">
             <button
@@ -38,7 +38,7 @@ const TopHeader: React.FC = () => {
           </div>
 
           {/* Right Side - WebTrader, Support, Open Demo, Language */}
-          <div className="flex items-center">
+          <div className="flex items-center max-sm:text-xs max-sm:w-full max-sm:mt-4 max-sm:border-t border-neutral-200 pt-2">
             <a
               href="#webtrader"
               className="hover:text-primary transition-colors text-text-primary font-medium px-3 border-r border-neutral-300"
