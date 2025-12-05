@@ -1,4 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
+import { Component } from "react";
+import type { ErrorInfo, ReactNode } from "react";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -31,11 +32,17 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     console.error("ErrorBoundary caught an error:", error, errorInfo);
   }
 
+  handleReload = (): void => {
+    window.location.reload();
+  };
+
   render(): ReactNode {
     if (this.state.hasError) {
       if (this.props.fallback) {
         return this.props.fallback;
       }
+
+      const isDevelopment = import.meta.env.DEV;
 
       return (
         <div
@@ -52,13 +59,13 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               refreshing the page.
             </p>
             <button
-              onClick={() => window.location.reload()}
+              onClick={this.handleReload}
               className="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               aria-label="Reload page"
             >
               Reload Page
             </button>
-            {process.env.NODE_ENV === "development" && this.state.error && (
+            {isDevelopment && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700">
                   Error Details (Development Only)

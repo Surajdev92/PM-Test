@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Container from "../../common/Container";
 import Card from "../../common/Card";
 import coinIcon from "../../../assets/icons/Coin.png";
@@ -16,7 +16,8 @@ interface MarketCategory {
 }
 
 const MarketCategories: React.FC = () => {
-  const categories: MarketCategory[] = [
+  const categories: MarketCategory[] = useMemo(
+    () => [
     {
       icon: coinIcon,
       title: "Forex",
@@ -41,7 +42,9 @@ const MarketCategories: React.FC = () => {
       description:
         "Tap into global demand and supply trends by trading essential resources such as oil, gas, and agricultural products.",
     },
-  ];
+  ],
+    []
+  );
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">

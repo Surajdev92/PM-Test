@@ -1,4 +1,4 @@
-import React, { useCallback, memo } from "react";
+import React, { useCallback, useMemo, memo } from "react";
 
 interface ButtonProps {
   label: string;
@@ -20,15 +20,18 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles =
     "inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
-  const variantStyles = {
-    primary:
-      "bg-primary text-white hover:bg-primary-600 focus:ring-primary-500",
-    outline:
-      "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary-500",
-    ghost:
-      "text-primary bg-transparent hover:bg-primary-50 focus:ring-primary-500",
-    white: "bg-white text-primary hover:bg-neutral-100 focus:ring-white",
-  };
+  const variantStyles = useMemo(
+    () => ({
+      primary:
+        "bg-primary text-white hover:bg-primary-600 focus:ring-primary-500",
+      outline:
+        "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary-500",
+      ghost:
+        "text-primary bg-transparent hover:bg-primary-50 focus:ring-primary-500",
+      white: "bg-white text-primary hover:bg-neutral-100 focus:ring-white",
+    }),
+    []
+  );
 
   const handleClick = useCallback(() => {
     if (!disabled && onClick) {

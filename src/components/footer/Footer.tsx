@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Container from "../common/Container";
 import logoPng from "../../assets/images/Logo.png";
 import PaymentIcons from "./PaymentIcons";
@@ -19,7 +19,8 @@ interface FooterSection {
 }
 
 const Footer: React.FC = () => {
-  const footerSections: FooterSection[] = [
+  const footerSections: FooterSection[] = useMemo(
+    () => [
     {
       title: "Quick Links",
       links: [
@@ -47,7 +48,9 @@ const Footer: React.FC = () => {
         { label: "Legal Documents", href: "#legal" },
       ],
     },
-  ];
+  ],
+    []
+  );
 
   return (
     <footer className="bg-neutral-900 text-white border-t-[24px] border-primary">

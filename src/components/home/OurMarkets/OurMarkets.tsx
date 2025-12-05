@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import Container from "../../common/Container";
 import buyArrow from "../../../assets/icons/Buy arrow.svg";
 import sellArrow from "../../../assets/icons/Sell arrow.svg";
@@ -25,59 +25,76 @@ const OurMarkets: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("most-traded");
   const [activeTimeFilter, setActiveTimeFilter] = useState<string>("1d");
 
-  const tabs: Tab[] = [
-    { id: "most-traded", label: "Most Traded" },
-    { id: "commodities", label: "Commodities" },
-    { id: "indices", label: "Indices" },
-    { id: "cryptocurrencies", label: "Cryptocurrencies" },
-    { id: "shares", label: "Shares" },
-    { id: "etfs", label: "ETFs" },
-  ];
+  const tabs: Tab[] = useMemo(
+    () => [
+      { id: "most-traded", label: "Most Traded" },
+      { id: "commodities", label: "Commodities" },
+      { id: "indices", label: "Indices" },
+      { id: "cryptocurrencies", label: "Cryptocurrencies" },
+      { id: "shares", label: "Shares" },
+      { id: "etfs", label: "ETFs" },
+    ],
+    []
+  );
 
-  const marketItems: MarketItem[] = [
-    {
-      icon: cryptocurrencyIcon,
-      symbol: "BTC",
-      name: "Bitcoin",
-      price: "₱43,245.67",
-      change: "+2.34%",
-      isPositive: true,
-    },
-    {
-      icon: cryptocurrencyIcon,
-      symbol: "ETH",
-      name: "Ethereum",
-      price: "₱ 2,456.78",
-      change: "-1.23%",
-      isPositive: false,
-    },
-    {
-      icon: cryptocurrencyIcon,
-      symbol: "XRP",
-      name: "Ripple",
-      price: "₱ 0.5234",
-      change: "+0.45%",
-      isPositive: true,
-    },
-    {
-      icon: cryptocurrencyIcon,
-      symbol: "LTC",
-      name: "Litecoin",
-      price: "₱ 78.90",
-      change: "-0.12%",
-      isPositive: false,
-    },
-    {
-      icon: cryptocurrencyIcon,
-      symbol: "ADA",
-      name: "Cardano",
-      price: "₱ 0.4567",
-      change: "+1.56%",
-      isPositive: true,
-    },
-  ];
+  const marketItems: MarketItem[] = useMemo(
+    () => [
+      {
+        icon: cryptocurrencyIcon,
+        symbol: "BTC",
+        name: "Bitcoin",
+        price: "₱43,245.67",
+        change: "+2.34%",
+        isPositive: true,
+      },
+      {
+        icon: cryptocurrencyIcon,
+        symbol: "ETH",
+        name: "Ethereum",
+        price: "₱ 2,456.78",
+        change: "-1.23%",
+        isPositive: false,
+      },
+      {
+        icon: cryptocurrencyIcon,
+        symbol: "XRP",
+        name: "Ripple",
+        price: "₱ 0.5234",
+        change: "+0.45%",
+        isPositive: true,
+      },
+      {
+        icon: cryptocurrencyIcon,
+        symbol: "LTC",
+        name: "Litecoin",
+        price: "₱ 78.90",
+        change: "-0.12%",
+        isPositive: false,
+      },
+      {
+        icon: cryptocurrencyIcon,
+        symbol: "ADA",
+        name: "Cardano",
+        price: "₱ 0.4567",
+        change: "+1.56%",
+        isPositive: true,
+      },
+    ],
+    []
+  );
 
-  const timeFilters = ["1d", "1h", "4h", "1m", "5m", "15m", "30m", "1w"];
+  const timeFilters = useMemo(
+    () => ["1d", "1h", "4h", "1m", "5m", "15m", "30m", "1w"],
+    []
+  );
+
+  const handleTabChange = useCallback((tabId: string) => {
+    setActiveTab(tabId);
+  }, []);
+
+  const handleTimeFilterChange = useCallback((filter: string) => {
+    setActiveTimeFilter(filter);
+  }, []);
 
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
@@ -99,7 +116,7 @@ const OurMarkets: React.FC = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabChange(tab.id)}
               className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full shadow-md text-sm sm:text-base font-medium whitespace-nowrap ${
                 activeTab === tab.id
                   ? "bg-primary text-white border-primary border"
@@ -295,7 +312,7 @@ const OurMarkets: React.FC = () => {
                     {timeFilters.map((filter) => (
                       <button
                         key={filter}
-                        onClick={() => setActiveTimeFilter(filter)}
+                        onClick={() => handleTimeFilterChange(filter)}
                         className={`p-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap text-white ${
                           activeTimeFilter === filter
                             ? "bg-primary"
