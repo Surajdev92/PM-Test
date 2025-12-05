@@ -99,7 +99,7 @@ const EmpowerTrading: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex flex-col justify-center items-center text-center px-20">
+                  <div className="relative z-10 flex flex-col justify-center items-center text-center lg:px-20 px-4">
                     {/* Icon */}
                     <div className="mb-6">
                       <img
@@ -123,7 +123,7 @@ const EmpowerTrading: React.FC = () => {
               ))}
 
               {/* Center Logo - positioned absolutely in the center */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none max-sm:hidden">
                 <div className="w-20 h-20 border-4 border-white rounded-full bg-primary flex items-center justify-center shadow-2xl">
                   <img
                     src={logoIcon}

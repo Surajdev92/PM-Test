@@ -21,34 +21,34 @@ interface FooterSection {
 const Footer: React.FC = () => {
   const footerSections: FooterSection[] = useMemo(
     () => [
-    {
-      title: "Quick Links",
-      links: [
-        { label: "About Us", href: "#about" },
-        { label: "Our Markets", href: "#our-markets" },
-        { label: "Platforms", href: "#platforms" },
-        { label: "Pricing", href: "#pricing" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { label: "Help Center", href: "#help" },
-        { label: "FAQ", href: "#faq" },
-        { label: "Terms & Conditions", href: "#terms" },
-        { label: "Privacy Policy", href: "#privacy" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "Careers", href: "#careers" },
-        { label: "News & Updates", href: "#news" },
-        { label: "Partnerships", href: "#partnerships" },
-        { label: "Legal Documents", href: "#legal" },
-      ],
-    },
-  ],
+      {
+        title: "Quick Links",
+        links: [
+          { label: "About Us", href: "#about" },
+          { label: "Our Markets", href: "#our-markets" },
+          { label: "Platforms", href: "#platforms" },
+          { label: "Pricing", href: "#pricing" },
+        ],
+      },
+      {
+        title: "Support",
+        links: [
+          { label: "Help Center", href: "#help" },
+          { label: "FAQ", href: "#faq" },
+          { label: "Terms & Conditions", href: "#terms" },
+          { label: "Privacy Policy", href: "#privacy" },
+        ],
+      },
+      {
+        title: "Company",
+        links: [
+          { label: "Careers", href: "#careers" },
+          { label: "News & Updates", href: "#news" },
+          { label: "Partnerships", href: "#partnerships" },
+          { label: "Legal Documents", href: "#legal" },
+        ],
+      },
+    ],
     []
   );
 
@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
 
             {/* Footer Links */}
             {footerSections.map((section, index) => (
-              <div key={index} className="mt-[60px] col-span-1 pl-20">
+              <div key={index} className="mt-[60px] col-span-1 sm:pl-20">
                 <h3 className="font-semibold mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (

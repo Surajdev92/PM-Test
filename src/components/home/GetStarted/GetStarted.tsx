@@ -13,13 +13,8 @@ const GetStarted: React.FC = () => {
   return (
     <section className="py-16 md:py-24">
       <Container>
-        <div
-          className="rounded-2xl text-white overflow-hidden h-[370px]"
-          style={{
-            background: "linear-gradient(90deg, #BE050D 0%, #580000 100%)",
-          }}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12 lg:px-16 py-12 md:py-16">
+        <div className="rounded-2xl text-white overflow-hidden h-[328px] xl:h-[370px] bg-get-started-bg-gradient">
+          <div className="grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12 xl:px-16 py-12 md:py-16">
             {/* Left Side - Steps and Content */}
             <div className="flex flex-col gap-8">
               {/* Steps */}
@@ -27,24 +22,12 @@ const GetStarted: React.FC = () => {
                 {steps.map((step) => (
                   <div key={step.number} className="flex items-center gap-3">
                     {/* Wrapper for gradient border */}
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 p-[2px]"
-                      style={{
-                        background:
-                          "linear-gradient(200.56deg, #FFFFFF 22.55%, rgba(255, 151, 151, 0) 86.36%)",
-                      }}
-                    >
-                      <div
-                        className="w-full h-full rounded-full flex items-center justify-center font-bold text-white"
-                        style={{
-                          background:
-                            "linear-gradient(145.78deg, #FF696F 5.81%, #ED1D25 79.76%)",
-                        }}
-                      >
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 p-[2px] bg-step-border-gradient">
+                      <div className="w-full h-full rounded-full flex items-center justify-center font-bold text-white bg-step-bg-gradient">
                         {step.number}
                       </div>
                     </div>
-                    <span className="text-base md:text-2xl font-semibold text-white">
+                    <span className="text-base md:text-md xl:text-2xl font-semibold text-white">
                       {step.label}
                     </span>
                   </div>

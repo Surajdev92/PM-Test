@@ -15,7 +15,7 @@ const TopHeader: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setActiveAccountType("personal")}
-              className={`text-sm text-text-primary font-medium transition-colors pb-3 -mb-4 ${
+              className={`text-sm text-text-primary font-medium transition-colors pb-3 -mb-6 ${
                 activeAccountType === "personal"
                   ? "text-primary border-b-2 border-primary"
                   : "text-neutral-500 hover:text-neutral-700"
@@ -26,7 +26,7 @@ const TopHeader: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveAccountType("institutional")}
-              className={`text-sm font-medium transition-colors pb-3 -mb-4 ${
+              className={`text-sm font-medium transition-colors pb-3 -mb-6 ${
                 activeAccountType === "institutional"
                   ? "text-primary border-b-2 border-primary"
                   : "text-neutral-500 hover:text-neutral-700"
@@ -38,7 +38,7 @@ const TopHeader: React.FC = () => {
           </div>
 
           {/* Right Side - WebTrader, Support, Open Demo, Language */}
-          <div className="flex items-center max-sm:text-xs max-sm:w-full max-sm:mt-4 max-sm:border-t border-neutral-200 pt-2">
+          <div className="flex items-center max-sm:text-xs max-sm:w-full max-sm:mt-6 max-sm:border-t border-neutral-200 pt-2">
             <a
               href="#webtrader"
               className="hover:text-primary transition-colors text-text-primary font-medium px-3 border-r border-neutral-300"

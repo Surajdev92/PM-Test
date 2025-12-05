@@ -21,7 +21,7 @@ const PaymentIcons: React.FC = () => {
   return (
     <section className="bg-neutral-900 border-b border-white/20 py-8">
       <Container>
-        <div className="flex flex-wrap items-center justify-center gap- md:gap-8 lg:gap-20">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-20">
           {paymentMethods.map((method) => (
             <div key={method.name} className="flex items-center justify-center">
               <img

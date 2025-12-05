@@ -90,7 +90,7 @@ const DailyUpdates: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="bg-white py-12 sm:py-16 md:py-20 xl:py-24">
       <Container>
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 md:mb-12 gap-4">
@@ -98,7 +98,7 @@ const DailyUpdates: React.FC = () => {
             <p className="text-primary font-semibold text-xs sm:text-sm md:text-base mb-2">
               Daily Updates
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary">
+            <h2 className="text-2xl md:text-3xl xl:text-5xl font-bold text-text-primary">
               Everything you need to trade the markets
             </h2>
           </div>
