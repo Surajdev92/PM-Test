@@ -89,7 +89,7 @@ const Withdrawals: React.FC = () => {
 
           {/* Right Side - Banner Image (Absolute Positioned) */}
           <div className="hidden sm:block absolute bottom-0 right-0 z-0 pointer-events-none">
-            <div className="relative w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] 2xl:w-full">
+            <div className="relative w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[700px] 2xl:w-full">
               <img
                 src={withdrawalsBanner}
                 alt="Seamless Withdrawals"

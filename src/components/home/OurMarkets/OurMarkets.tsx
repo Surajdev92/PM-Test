@@ -199,7 +199,7 @@ const OurMarkets: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-lg font-semibold">Buy</span>
                     </div>
-                    <p className="text-2xl font-bold flex items-center gap-4">
+                    <p className="2xl:text-2xl text-xl font-bold flex items-center gap-4">
                       2,045.23{" "}
                       <img
                         src={buyArrow}
@@ -215,7 +215,7 @@ const OurMarkets: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-lg font-semibold">Sell</span>
                     </div>
-                    <p className="text-2xl sm:text-3xl font-bold flex items-center gap-4">
+                    <p className="2xl:text-2xl text-xl font-bold flex items-center gap-4">
                       2,045.18{" "}
                       <img
                         src={sellArrow}
@@ -231,7 +231,7 @@ const OurMarkets: React.FC = () => {
               {/* Buyer/Seller Stats Card */}
               <div className="col-span-4">
                 <div className="space-y-4 sm:space-y-6">
-                  <div className="flex justify-between items-center mb-2 gap-4 flex-col h-24 bg-neutral-50 rounded-xl md:rounded-2xl px-6 py-4">
+                  <div className="flex justify-between items-center mb-2 gap-4 flex-col h-24 bg-neutral-50 rounded-xl md:rounded-2xl 2xl:px-6 px-2 py-4">
                     <div className="flex items-center gap-2">
                       <span className="text-sm  text-neutral-600">Buyers</span>
                       <span className="text-sm font-semibold bg-gray-200 rounded-md px-1">
@@ -281,7 +281,7 @@ const OurMarkets: React.FC = () => {
             <div className="flex flex-col gap-3">
               <div className="flex gap-6">
                 {/* Chart Image */}
-                <div className="relative w-full rounded-lg overflow-hidden mb-4 sm:mb-6">
+                <div className="relative w-full rounded-lg overflow-hidden mb-2 2xl:mb-6">
                   <img
                     src={graphImage}
                     alt="XAU/USD Chart"
@@ -289,7 +289,7 @@ const OurMarkets: React.FC = () => {
                   />
                 </div>
                 {/* Chart Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 2xl:mb-6 gap-4">
                   {/* Time Filters - Vertical on Right */}
                   <div className="flex sm:flex-col gap-2 flex-wrap sm:flex-nowrap">
                     {timeFilters.map((filter) => (
