@@ -10,7 +10,7 @@ const TopHeader: React.FC = () => {
   return (
     <div className="bg-white text-text-primary text-sm border-b border-neutral-200">
       <Container>
-        <div className="flex items-center justify-between py-2.5 flex-wrap">
+        <div className="flex items-center justify-between py-2.5 max-sm:flex-wrap">
           {/* Left Side - Personal/Institutional Tabs */}
           <div className="flex items-center gap-4">
             <button
