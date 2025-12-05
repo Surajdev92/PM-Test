@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-800 text-white overflow-hidden">
       {/* Curved bottom divider */}
-      <div className="absolute 3xl:bottom-0 2xl:bottom-12 xl:bottom-16 bottom-24 left-0 right-0 w-full z-20">
+      <div className="absolute 3xl:bottom-0 2xl:bottom-12 xl:bottom-16 max-md:bottom-24 max-sm:bottom-40 left-0 right-0 w-full z-20">
         <img
           src={curvedDivider}
           alt=""

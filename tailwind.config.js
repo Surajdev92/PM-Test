@@ -81,6 +81,9 @@ export default {
         md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
         lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
         xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        card: "0px 4px 8px 0px #00000017",
+        "button-glow":
+          "0px 4px 24px 0px rgba(255, 74, 74, 0.25), 0px 4px 34px 0px rgba(255, 0, 0, 0.25), 0px 4px 34px 0px rgba(255, 255, 255, 0.25)",
       },
       backgroundImage: {
         "card-border-gradient":
@@ -88,6 +91,24 @@ export default {
         "pill-bg-gradient": "linear-gradient(90deg, #900003 0%, #730307 100%)",
         "pill-border-gradient":
           "linear-gradient(90deg, #ED1D25 0%, #FF9595 100%)",
+        "hover-bg-gradient":
+          "linear-gradient(126.89deg, #ED1D25 -17.29%, #871115 171.67%)",
+        "hover-border-gradient":
+          "linear-gradient(90deg, #FF434A 0%, #FFA7AA 100%)",
+        "gold-card-gradient":
+          "linear-gradient(262.27deg, #940006 10.82%, #220001 125.85%)",
+        "button-wrapper-gradient":
+          "linear-gradient(90.64deg, #6D0002 -2.57%, #FFFFFF 108.74%)",
+        "button-bg-gradient":
+          "linear-gradient(90deg, #390507 0%, #962020 100%)",
+        "withdrawals-bg-gradient":
+          "linear-gradient(102.54deg, #FFDFDF -11.21%, #FFFCFC 23.26%, #FFD5D6 95.34%)",
+        "get-started-bg-gradient":
+          "linear-gradient(90deg, #BE050D 0%, #580000 100%)",
+        "step-border-gradient":
+          "linear-gradient(200.56deg, #FFFFFF 22.55%, rgba(255, 151, 151, 0) 86.36%)",
+        "step-bg-gradient":
+          "linear-gradient(145.78deg, #FF696F 5.81%, #ED1D25 79.76%)",
       },
       screens: {
         sm: "640px",

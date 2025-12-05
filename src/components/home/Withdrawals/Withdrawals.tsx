@@ -34,7 +34,7 @@ const Withdrawals: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="bg-white py-12 sm:py-16 md:py-20 xl:py-24">
       <Container>
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           {/* Subheading */}
@@ -48,13 +48,7 @@ const Withdrawals: React.FC = () => {
           </h2>
         </div>
 
-        <div
-          className="p-4 sm:p-6 md:p-8 lg:p-12 xl:px-20 xl:py-16 rounded-2xl sm:rounded-3xl relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]"
-          style={{
-            background:
-              "linear-gradient(102.54deg, #FFDFDF -11.21%, #FFFCFC 23.26%, #FFD5D6 95.34%)",
-          }}
-        >
+        <div className="p-2 lg:p-4 xl:px-20 xl:py-16 rounded-2xl sm:rounded-3xl relative overflow-hidden min-h-auto xl:min-h-[600px] bg-withdrawals-bg-gradient">
           {/* Left Side - Text Content */}
           <div className="relative z-10 max-w-full sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
             {/* Feature Cards */}
@@ -88,8 +82,8 @@ const Withdrawals: React.FC = () => {
           </div>
 
           {/* Right Side - Banner Image (Absolute Positioned) */}
-          <div className="hidden sm:block absolute bottom-0 right-0 z-0 pointer-events-none">
-            <div className="relative w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[700px] 2xl:w-full">
+          <div className="hidden lg:block absolute bottom-0 right-0 z-0 pointer-events-none">
+            <div className="relative w-48 sm:w-64 md:w-80 lg:w-[560px] xl:w-[700px] 2xl:w-full">
               <img
                 src={withdrawalsBanner}
                 alt="Seamless Withdrawals"

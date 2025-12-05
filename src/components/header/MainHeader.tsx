@@ -24,18 +24,18 @@ const MainHeader: React.FC = () => {
 
   return (
     <>
-      <header className="bg-white border-b border-neutral-200 sticky top-0 z-50">
+      <header className="bg-white border-b border-neutral-200 sticky top-0 z-[99]">
         <Container>
           <div className="flex items-center justify-between h-20">
             <Logo />
 
             {/* Desktop Navigation - Centered */}
-            <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+            <nav className="hidden lg:flex items-center xl:gap-8 gap-6 absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-neutral-700 hover:text-primary transition-colors font-medium flex items-center gap-1 text-sm"
+                  className="text-neutral-700 hover:text-primary transition-colors font-medium flex items-center gap-1 xl:text-sm text-xs"
                   aria-label={item.label}
                 >
                   {item.label}
