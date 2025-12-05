@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-800 text-white overflow-hidden">
       {/* Curved bottom divider */}
-      <div className="absolute 3xl:bottom-0 2xl:bottom-12 bottom-16 left-0 right-0 w-full z-20">
+      <div className="absolute 3xl:bottom-0 2xl:bottom-12 xl:bottom-16 bottom-24 left-0 right-0 w-full z-20">
         <img
           src={curvedDivider}
           alt=""
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <div className="relative z-10 py-16 md:py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Text Content */}
-            <div className="space-y-6 lg:space-y-8 md:pr-32">
+            <div className="space-y-6 lg:space-y-8 xl:pr-32">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Trade Forex with Premier Markets
               </h1>

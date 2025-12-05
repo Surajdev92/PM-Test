@@ -82,6 +82,13 @@ export default {
         lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
         xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       },
+      backgroundImage: {
+        "card-border-gradient":
+          "linear-gradient(180deg, #FFE6E7 0%, #ED1D25 62.02%)",
+        "pill-bg-gradient": "linear-gradient(90deg, #900003 0%, #730307 100%)",
+        "pill-border-gradient":
+          "linear-gradient(90deg, #ED1D25 0%, #FF9595 100%)",
+      },
       screens: {
         sm: "640px",
         md: "768px",

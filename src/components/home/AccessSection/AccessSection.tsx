@@ -12,7 +12,7 @@ const AccessSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12 md:mb-16">
           {/* Left Side - Heading */}
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl font-bold text-text-primary mb-4 sm:mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl font-bold text-text-primary mb-4 sm:mb-6 leading-tight xl:max-w-2xl">
               Join <span className="text-primary">50,000+</span> traders who
               trust us
             </h2>
