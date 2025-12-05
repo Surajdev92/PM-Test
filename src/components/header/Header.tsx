@@ -1,6 +1,6 @@
-import React from 'react'
-import TopHeader from './TopHeader'
-import MainHeader from './MainHeader'
+import React from "react";
+import TopHeader from "./TopHeader";
+import MainHeader from "./MainHeader";
 
 const Header: React.FC = () => {
   return (
@@ -8,8 +8,8 @@ const Header: React.FC = () => {
       <TopHeader />
       <MainHeader />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, memo } from "react";
 
 interface ButtonProps {
   label: string;
@@ -30,12 +30,20 @@ const Button: React.FC<ButtonProps> = ({
     white: "bg-white text-primary hover:bg-neutral-100 focus:ring-white",
   };
 
+  const handleClick = useCallback(() => {
+    if (!disabled && onClick) {
+      onClick();
+    }
+  }, [disabled, onClick]);
+
+  const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`.trim();
+
   return (
     <button
       type={type}
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={combinedClassName}
       aria-label={label}
     >
       {label}
@@ -43,4 +51,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default memo(Button);

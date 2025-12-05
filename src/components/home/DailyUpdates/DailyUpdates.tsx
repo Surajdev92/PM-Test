@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, memo } from "react";
 import Container from "../../common/Container";
 import coverImage from "../../../assets/images/cover.png";
 import mediaBgCover from "../../../assets/images/media bg-cover.png";
@@ -10,16 +10,27 @@ interface VideoModalProps {
 }
 
 const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
+  const handleBackdropClick = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  const handleContentClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      e.stopPropagation();
+    },
+    []
+  );
+
   if (!isOpen) return null;
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-      onClick={onClose}
+      onClick={handleBackdropClick}
     >
       <div
         className="relative w-full max-w-4xl mx-4"
-        onClick={(e) => e.stopPropagation()}
+        onClick={handleContentClick}
       >
         <button
           onClick={onClose}
@@ -31,6 +42,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -54,22 +66,28 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
+const MemoizedVideoModal = memo(VideoModal);
+
 const DailyUpdates: React.FC = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  const handleReadMore = () => {
+  const handleReadMore = useCallback(() => {
     // Navigate to article detail page
     window.location.href = "#article-detail";
-  };
+  }, []);
 
-  const handleViewAll = () => {
+  const handleViewAll = useCallback(() => {
     // Navigate to full updates listing page
     window.location.href = "#updates-listing";
-  };
+  }, []);
 
-  const handlePlayVideo = () => {
+  const handlePlayVideo = useCallback(() => {
     setIsVideoModalOpen(true);
-  };
+  }, []);
+
+  const handleCloseVideo = useCallback(() => {
+    setIsVideoModalOpen(false);
+  }, []);
 
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
@@ -209,9 +227,9 @@ const DailyUpdates: React.FC = () => {
       </Container>
 
       {/* Video Modal */}
-      <VideoModal
+      <MemoizedVideoModal
         isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
+        onClose={handleCloseVideo}
       />
     </section>
   );
